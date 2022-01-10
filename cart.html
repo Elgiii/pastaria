@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    font-family: 'Montserrat';
+}
+
+.body {
+  padding: 25px;
+  background-color: white;
+  color: #00519e;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: #202225;
+  color: lightgray;
+}
+
+.flex-container {
+    display: flex;
+    margin: 5pt;
+}
+
+.box {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.logo {
+    justify-content: center;
+    height: 120px;
+}
+
+.button {
+    background-color:white;
+    border-radius:0%;
+    border-width:1pt;
+    width: 50pt;
+    float: right;
+    margin-right: 25pt;
+}
+
+.boxes{
+    margin: 5pt;
+    margin-left: 20pt;
+}
+
+.back{
+    height: 20pt;
+    margin-left: 10pt;
+    float: left;
+}
+
+.arrow{
+    height: 15pt;
+}
+
+.headline{
+    font-size: 30pt;
+    color:darkblue;
+}
+
+.item{
+    width: 90pt;
+    height: 90pt;
+}
+
+
+</style>
+<script>
+    function handelButton() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+     
+</script>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+<body class="body">
+    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
+    <div class="box">
+        <div class="flex-container">
+            <button class="back" style="float: left;">
+                <img class="arrow" src="arrow.png">
+            </button>
+            <p style="margin-left: 10pt;">Warenkorb</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="item">
+                <img style="height: 100%; width: 100%;" src="pizza.png">
+            </div>
+            <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                <div style="height: 90pt;">
+                    <div style="font-size: 25pt;">Salami</div>
+                    <div>- doppelt Kaese</div>
+                    <div>- gross</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="item">
+                <img style="height: 100%; width: 100%;" src="burger.png">
+            </div>
+            <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                <div style="height: 90pt;">
+                    <div style="font-size: 25pt;">Burger</div>
+                    <div>- doppelt Kaese</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="item">
+                <img style="height: 100%; width: 100%;" src="water.png">
+            </div>
+            <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                <div style="height: 90pt;">
+                    <div style="font-size: 25pt;">Wasser</div>
+                    <div>- mit Kohlensaeure</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="item">
+                <img style="height: 100%; width: 100%;" src="pasta.png">
+            </div>
+            <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                <div style="height: 90pt;">
+                    <div style="font-size: 25pt;">Pasta</div>
+                    <div>- mit roter Sosse</div>
+                    <div>- mit Kaese</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="userdata.html">
+            <button class="button">Weiter</button>
+        </a>
+        <p id="statusText"></p>
+    </div>
+</body>
+</html> 
