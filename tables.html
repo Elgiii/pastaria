@@ -65,6 +65,10 @@
         var element = document.body;
         element.classList.toggle("dark-mode");
     }
+
+    function changePicture(){
+        document.getElementById("tables").src = "restaurant2.png";
+    }
      
 </script>
 </head>
@@ -83,9 +87,9 @@
                 <div style="margin:7pt;">3</div>
             </div>
         <div class="flex-container">
-            <a href="tables2.html">
-                <img alt="layout" src="restaurant.png" height="500">
-             </a>
+            
+                <img id="tables" onclick="changePicture()" alt="layout" src="restaurant.png" height="500">
+            
         </div>
         
     </div>
