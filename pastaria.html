@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    font-family: 'Montserrat';
+}
+
+.body {
+  padding: 25px;
+  background-color: white;
+  color: #00519e;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: #202225;
+  color: lightgray;
+}
+
+.flex-container {
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    margin: 5pt;
+}
+
+.box {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.logo {
+    justify-content: center;
+    height: 120px;
+}
+
+.button {
+    background-color:white;
+    border-radius:0%;
+    border-width:1pt;
+    width: 50pt;
+    float: right;
+    margin-right: 25pt;
+}
+
+.boxes{
+    margin: 5pt;
+    margin-left: 20pt;
+}
+
+
+</style>
+<script>
+
+    function handleSubmit() {
+        weatherCity = document.getElementById("cityname").value;
+        sendWeatherRequest();
+        setInterval(function(){sendWeatherRequest();},30000);
+    }
+
+    function handelButton() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+     
+</script>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+<body class="body">
+    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
+    <div class="box">
+        <div class="flex-container">
+            <img class="logo" src="logo.png"></div>
+            <div class="flex-container">
+                <div class="box">
+                    <div style="margin:7pt;">Datum</div>
+                    <div style="margin:7pt;">Uhrzeit</div>
+                    <div style="margin:7pt;">Personen</div>
+                </div>
+                <div class="box">
+                    <form action="/myform" class="boxes" method="get">
+                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                    </form>
+                    <form action="/myform" class="boxes" method="get">
+                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                    </form>
+                    <form action="/myform" class="boxes" method="get">
+                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <input type="checkbox" id="tischeReservierenCheckbox" name="tischreservieren">
+                <label for="tischeReservierenCheckbox">Tische reservieren</label>
+              </div>
+            <div>
+                <input type="checkbox" id="essenVorbestellenCheckbox" name="essenvorbestellen">
+                <label for="essenVorbestellenCheckbox">Essen vorbestellen</label>
+            </div>
+        </div>
+        <a href="tables.html">
+            <button class="button">Weiter</button>
+        </a>
+        <p id="statusText"></p>
+</body>
+</html> 
