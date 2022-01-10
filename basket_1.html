@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    font-family: 'Montserrat';
+}
+
+.body {
+  padding: 25px;
+  background-color: white;
+  color: #00519e;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: #202225;
+  color: lightgray;
+}
+
+.header {
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 15px;
+	text-align: center;
+}
+
+.flex-container {
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+}
+
+.box {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.city {
+    font-size: 30pt;
+    font-weight: bold;
+    padding: 15px;
+	text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.icon {
+    max-width: 60%;
+    max-height: 60%;
+    margin-left: 30pt;
+}
+
+.mainweather {
+    text-align: center;
+    margin-left: 20pt;
+    /*color: black; Wenn man möchte, dass diese Schrift schwarz erscheint wie im Assignment, dann nimmt man das hier rein. (Für den Darkmode müsste jedoch ein extra Stylesheet rein.)*/
+}
+
+.temp {
+    margin: 5pt;
+    /*color: black; Wenn man möchte, dass diese Schrift schwarz erscheint wie im Assignment, dann nimmt man das hier rein. (Für den Darkmode müsste jedoch ein extra Stylesheet rein.)*/
+}
+
+.dist {
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    margin: 20pt;
+}
+
+.rotate {
+    max-height: 50pt;
+    max-width: 50pt;
+}
+
+.button {
+    background-color:white;
+    border-radius:0%;
+    border-width:1pt;
+    width: 70pt;
+    float: right;
+    margin-right: 25pt;
+}
+
+
+</style>
+<script>
+
+    function handleSubmit1() {
+        document.getElementById("Pizza").innerHTML = "Pizza";
+    }
+
+    function handleSubmit2() {
+        document.getElementById("Burger").innerHTML = "Burger";
+    }
+
+    function handleSubmit3() {
+        document.getElementById("Wasser").innerHTML = "Wasser";
+    }
+
+    function handleSubmit4() {
+        document.getElementById("Pasta").innerHTML = "Pasta";
+    }
+
+    function handelButton() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+     
+</script>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+<body class="body">
+    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
+    <div class="box">
+        <div class="flex-container">
+            <div>Warenkorb</div>
+            <div style="margin-left:50pt;">Gericht</div>
+            <div style="margin-left:50pt;">Preis</div>
+        </div>
+        <div class="flex-container">
+            <div class="box">
+                <div style="margin-right:50pt;" id="Pizza"></div>
+                <div style="margin-right:50pt;" id="Burger"></div>
+                <div style="margin-right:50pt;" id="Wasser"></div>
+                <div style="margin-right:50pt;" id="Pasta"></div>
+            </div>
+            <div class="box">
+                <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit1()">
+                    <div style="margin-left:50pt;margin-right:50pt;">Pizza</div>
+                </button>
+                <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit2()">
+                    <div style="margin-left:50pt;margin-right:50pt;">Burger</div>
+                </button>
+                <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit3()">
+                    <div style="margin-left:50pt;margin-right:50pt;">Wasser</div>
+                </button>
+                <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit4()">
+                    <div style="margin-left:50pt;margin-right:50pt;">Pasta</div>
+                </button>
+            </div>
+        </div>
+
+        <p id="statusText"></p>
+        <div class="flex-container">
+            <div class="box">
+                <div class="city" id="city"></div>
+                <div class="description" id="dsc"></div>
+            </div>
+            <div class="box">
+                <img class="icon" id="icon"></img>
+                <div class="mainweather" id="main"></div>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="dist">
+                <div id="text1"></div>
+                <div id="min" class="temp"></div>
+            </div>
+            <div class="dist">
+                <div id="text2"></div>
+                <div id="max" class="temp"></div>
+            </div>
+            <div class="dist">
+                <div id="text3"></div>
+                <div id="curr" class="temp"></div>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="suggestion"></div>
+        </div>
+        <div class="flex-container">
+            <div class="dist">
+                <div id="speed" class="speed"></div>
+            </div>
+            <div class="dist">
+                <img id="arrow" class="rotate"></img>
+            </div>
+
+        </div>
+    </div>
+    <a href="cart.html">
+        <button class="button">Zum Warenkorb</button>
+    </a>
+</body>
+</html> 
