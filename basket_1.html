@@ -87,24 +87,39 @@
     margin-right: 25pt;
 }
 
+.back{
+    height: 20pt;
+    margin-left: 10pt;
+    float: left;
+}
+
+.arrow{
+    height: 15pt;
+}
+
+.item{
+    width: 90pt;
+    height: 90pt;
+}
+
 
 </style>
 <script>
 
     function handleSubmit1() {
-        document.getElementById("Pizza").innerHTML = "Pizza";
+        document.getElementById("Pizza").style.visibility = "";
     }
 
     function handleSubmit2() {
-        document.getElementById("Burger").innerHTML = "Burger";
+        document.getElementById("Burger").style.visibility = "";
     }
 
     function handleSubmit3() {
-        document.getElementById("Wasser").innerHTML = "Wasser";
+        document.getElementById("Wasser").style.visibility = "";
     }
 
     function handleSubmit4() {
-        document.getElementById("Pasta").innerHTML = "Pasta";
+        document.getElementById("Pasta").style.visibility = "";
     }
 
     function handelButton() {
@@ -116,76 +131,143 @@
 </head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
-    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
+    <div class="box">
+        <button id="dark-mode" style="margin-bottom:5pt; margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt; width:70pt;" onclick="handelButton()">Dark Mode</button>
+        <a href="tables.html">
+            <button class="back" style="float: left;">
+                <img class="arrow" src="arrow.png">
+            </button>
+        </a>
+    </div>
     <div class="box">
         <div class="flex-container">
-            <div>Warenkorb</div>
-            <div style="margin-left:50pt;">Gericht</div>
-            <div style="margin-left:50pt;">Preis</div>
-        </div>
-        <div class="flex-container">
             <div class="box">
-                <div style="margin-right:50pt;" id="Pizza"></div>
-                <div style="margin-right:50pt;" id="Burger"></div>
-                <div style="margin-right:50pt;" id="Wasser"></div>
-                <div style="margin-right:50pt;" id="Pasta"></div>
+                <div style="text-align:center;">Warenkorb</div>
+                <div class="flex-container" id="Pizza" style="visibility: hidden;">
+                    <div class="item">
+                        <img style="height: 80%; width: 80%;" src="pizza.png">
+                    </div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div style="height: 90pt;">
+                            <div style="font-size: 25pt;">Salami</div>
+                            <div>- doppelt Kaese</div>
+                            <div>- gross</div>
+                        </div>
+                    </div>
+                    <div style="margin-left:5pt;">3,00€</div>
+                </div>
+                <div class="flex-container" id="Burger" style="visibility: hidden;">
+                    <div class="item">
+                        <img style="height: 80%; width: 80%;" src="burger.png">
+                    </div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div style="height: 90pt;">
+                            <div style="font-size: 25pt;">Burger</div>
+                            <div>- doppelt Kaese</div>
+                        </div>
+                    </div>
+                    <div style="margin-left:5pt;">3,00€</div>
+                </div>
+                <div class="flex-container" id="Wasser" style="visibility: hidden;">
+                    <div class="item">
+                        <img style="height: 80%; width: 80%;" src="water.png">
+                    </div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div style="height: 90pt;">
+                            <div style="font-size: 25pt;">Wasser</div>
+                            <div>- mit Kohlensaeure</div>
+                        </div>
+                    </div>
+                    <div style="margin-left:5pt;">3,00€</div>
+                </div>
+                <div class="flex-container" id="Pasta" style="visibility: hidden;">
+                    <div class="item">
+                        <img style="height: 80%; width: 80%;" src="pasta.png">
+                    </div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div style="height: 90pt;">
+                            <div style="font-size: 25pt;">Pasta</div>
+                            <div>- mit roter Sosse</div>
+                            <div>- mit Kaese</div>
+                        </div>
+                    </div>
+                    <div style="margin-left:5pt;">3,00€</div>
+                </div>
             </div>
             <div class="box">
+                <div class="flex-container">
+                    <div style="margin-left:50pt; margin-right:50pt;">Gericht</div>
+                    <div style="margin-left:50pt;">Preis</div>
+                </div>
                 <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit1()">
-                    <div style="margin-left:50pt;margin-right:50pt;">Pizza</div>
+                    <div class="flex-container">
+                        <div class="item">
+                            <img style="height: 80%; width: 80%;" src="pizza.png">
+                        </div>
+                        <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                            <div style="height: 90pt;">
+                                <div style="font-size: 25pt;">Salami</div>
+                                <div>- doppelt Kaese</div>
+                                <div>- gross</div>
+                                <div><br></div>
+                                <div>7,99€</div>
+                            </div>
+                        </div>
+                    </div>
                 </button>
                 <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit2()">
-                    <div style="margin-left:50pt;margin-right:50pt;">Burger</div>
+                    <div class="flex-container">
+                        <div class="item">
+                            <img style="height: 80%; width: 80%;" src="burger.png">
+                        </div>
+                        <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                            <div style="height: 90pt;">
+                                <div style="font-size: 25pt;">Burger</div>
+                                <div>- doppelt Kaese</div>
+                                <div><br></div>
+                                <div>12,00€</div>
+                            </div>
+                        </div>
+                    </div>
                 </button>
                 <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit3()">
-                    <div style="margin-left:50pt;margin-right:50pt;">Wasser</div>
+                    <div class="flex-container">
+                        <div class="item">
+                            <img style="height: 80%; width: 80%;" src="water.png">
+                        </div>
+                        <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                            <div style="height: 90pt;">
+                                <div style="font-size: 25pt;">Wasser</div>
+                                <div>- mit Kohlensaeure</div>
+                                <div><br></div>
+                                <div>15,00€</div>
+                            </div>
+                        </div>
+                    </div>
                 </button>
                 <button style="margin-left:50pt; background-color:white; border-radius:0%; border-width:1pt;" type="submit" onclick="handleSubmit4()">
-                    <div style="margin-left:50pt;margin-right:50pt;">Pasta</div>
+                    <div class="flex-container">
+                        <div class="item">
+                            <img style="height: 80%; width: 80%;" src="pasta.png">
+                        </div>
+                        <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                            <div style="height: 90pt;">
+                                <div style="font-size: 25pt;">Pasta</div>
+                                <div>- mit roter Sosse</div>
+                                <div>- mit Kaese</div>
+                                <div><br></div>
+                                <div>3,00€</div>
+                            </div>
+                        </div>
+                    </div>
                 </button>
             </div>
         </div>
 
         <p id="statusText"></p>
-        <div class="flex-container">
-            <div class="box">
-                <div class="city" id="city"></div>
-                <div class="description" id="dsc"></div>
-            </div>
-            <div class="box">
-                <img class="icon" id="icon"></img>
-                <div class="mainweather" id="main"></div>
-            </div>
-        </div>
-        <div class="flex-container">
-            <div class="dist">
-                <div id="text1"></div>
-                <div id="min" class="temp"></div>
-            </div>
-            <div class="dist">
-                <div id="text2"></div>
-                <div id="max" class="temp"></div>
-            </div>
-            <div class="dist">
-                <div id="text3"></div>
-                <div id="curr" class="temp"></div>
-            </div>
-        </div>
-        <div class="flex-container">
-            <div id="suggestion"></div>
-        </div>
-        <div class="flex-container">
-            <div class="dist">
-                <div id="speed" class="speed"></div>
-            </div>
-            <div class="dist">
-                <img id="arrow" class="rotate"></img>
-            </div>
-
-        </div>
+        <a href="cart.html">
+            <button class="button">Zum Warenkorb</button>
+        </a>
     </div>
-    <a href="cart.html">
-        <button class="button">Zum Warenkorb</button>
-    </a>
 </body>
 </html> 
