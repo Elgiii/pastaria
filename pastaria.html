@@ -12,11 +12,13 @@
   background-color: white;
   color: #00519e;
   font-size: 25px;
+  background-image: url("https://media.discordapp.net/attachments/914990860402327582/932750754559696996/bestbackground.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .dark-mode {
   background-color: #202225;
-  color: lightgray;
 }
 
 .flex-container {
@@ -24,12 +26,14 @@
     justify-content: center; 
     display: flex;
     margin: 5pt;
+    background-color: white;
 }
 
 .box {
     flex-direction: column;
     flex-wrap: wrap;
     display: flex;
+    background-color: white;
 }
 
 .logo {
@@ -55,12 +59,7 @@
 </style>
 <script>
 
-    function handleSubmit() {
-        weatherCity = document.getElementById("cityname").value;
-        sendWeatherRequest();
-        setInterval(function(){sendWeatherRequest();},30000);
-    }
-
+    //Funktion für den Button zum (De-)Aktivieren des Darkmodes
     function handelButton() {
         var element = document.body;
         element.classList.toggle("dark-mode");
@@ -70,17 +69,20 @@
 </head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
+    <!--Button zum (De-)Aktivieren des Darkmodes-->
     <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
     <div class="box">
         <div class="flex-container">
             <img class="logo" src="logo.png"></div>
             <div class="flex-container">
                 <div class="box">
+                    <!--Text für die Eingabefelder-->
                     <div style="margin:7pt;">Datum</div>
                     <div style="margin:7pt;">Uhrzeit</div>
                     <div style="margin:7pt;">Personen</div>
                 </div>
                 <div class="box">
+                    <!--Eingabefelder-->
                     <form action="/myform" class="boxes" method="get">
                         <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
                     </form>
@@ -93,6 +95,7 @@
                 </div>
             </div>
             <div>
+                <!--Boxen zum Ankreuzen der gewünschten Optionen-->
                 <input type="checkbox" id="tischeReservierenCheckbox" name="tischreservieren">
                 <label for="tischeReservierenCheckbox">Tische reservieren</label>
               </div>
@@ -101,6 +104,7 @@
                 <label for="essenVorbestellenCheckbox">Essen vorbestellen</label>
             </div>
         </div>
+        <!--Button zur nächsten Seite-->
         <a href="tables.html">
             <button class="button">Weiter</button>
         </a>
