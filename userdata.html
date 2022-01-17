@@ -9,14 +9,14 @@
 
 .body {
   padding: 25px;
-  background-color: white;
-  color: #00519e;
   font-size: 25px;
+  background-image: url("https://media.discordapp.net/attachments/914990860402327582/932750754559696996/bestbackground.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .dark-mode {
   background-color: #202225;
-  color: lightgray;
 }
 
 .flex-container {
@@ -24,12 +24,13 @@
     justify-content: center; 
     display: flex;
     margin: 5pt;
-}
+} 
 
 .box {
     flex-direction: column;
     flex-wrap: wrap;
     display: flex;
+    background-color: white;
 }
 
 .logo {
@@ -54,7 +55,9 @@
 
 </style>
 <script>
-    function handelButton() {
+
+    // Logik fuer den dark-mode button
+    function handleButton() {
         var element = document.body;
         element.classList.toggle("dark-mode");
     }
@@ -64,15 +67,17 @@
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
-    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handelButton()">Dark Mode</button>
+
+    <!-- dark mode button -->
+    <button id="dark-mode" style="margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt;" onclick="handleButton()">Dark Mode</button>
     <div class="box">
         
             <div class="flex-container">
-                <div class="box">
+                <div class="box"> <!-- Text fuer die Eingabefelder -->
                     <div style="margin:7pt;">Name</div>
                     <div style="margin:7pt;">E-Mail</div>
                 </div>
-                <div class="box">
+                <div class="box"> <!-- Eingabefelder fuer Name und Mail -->
                     <form action="/myform" class="boxes" method="get">
                         <input style="height:20pt; text-align:center;" type="text" required>
                     </form>
@@ -81,12 +86,14 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div> <!-- Checkbox fuer "Newsletter abonnieren" -->
                 <input type="checkbox" id="newsletter" name="newsletter">
                 <label for="newsletter">Newsletter abonnieren</label>
-              </div>
+            </div>
 
         </div>
+
+        <!-- Button fuer die naechste Seite -->
         <a href="endscreen.html">
             <button class="button">Abschließen</button>
         </a>
