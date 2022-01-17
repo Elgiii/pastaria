@@ -7,16 +7,18 @@
     font-family: 'Montserrat';
 }
 
+    
+    
 .body {
   padding: 25px;
-  background-color: white;
-  color: #00519e;
+  background-image: url("https://media.discordapp.net/attachments/914990860402327582/932750754559696996/bestbackground.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
   font-size: 25px;
 }
 
 .dark-mode {
   background-color: #202225;
-  color: lightgray;
 }
 
 .header {
@@ -30,6 +32,7 @@
     align-items: center;
     justify-content: center; 
     display: flex;
+    background-color: white;
 }
 
 .box {
@@ -105,7 +108,8 @@
 
 </style>
 <script>
-
+    <!-- Rueckgabe der Sichtbarkeitseigenschaft von Pizza , Burger, Wasser, Wasser, Pasta -->
+    
     function handleSubmit1() {
         document.getElementById("Pizza").style.visibility = "";
     }
@@ -121,7 +125,8 @@
     function handleSubmit4() {
         document.getElementById("Pasta").style.visibility = "";
     }
-
+    
+    <!-- Dark mode an- und ausschlaten -->
     function handelButton() {
         var element = document.body;
         element.classList.toggle("dark-mode");
@@ -131,6 +136,9 @@
 </head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
+   
+    
+    <!-- Dark Mode und Rueckpfeil Zeile -->
     <div class="box">
         <button id="dark-mode" style="margin-bottom:5pt; margin-left:10pt; background-color:white; border-radius:0%; border-width:1pt; width:70pt;" onclick="handelButton()">Dark Mode</button>
         <a href="tables.html">
@@ -139,8 +147,10 @@
             </button>
         </a>
     </div>
+    
     <div class="box">
         <div class="flex-container">
+            <!-- Warenkorb Box -->
             <div class="box">
                 <div style="text-align:center;">Warenkorb</div>
                 <div class="flex-container" id="Pizza" style="visibility: hidden;">
@@ -194,6 +204,7 @@
                     <div style="margin-left:5pt;">3,00€</div>
                 </div>
             </div>
+            <!-- Gericht und Preis Box -->
             <div class="box">
                 <div class="flex-container">
                     <div style="margin-left:50pt; margin-right:50pt;">Gericht</div>
@@ -265,6 +276,7 @@
         </div>
 
         <p id="statusText"></p>
+        <!-- zum Warenkorb Zeile -->
         <a href="cart.html">
             <button class="button">Zum Warenkorb</button>
         </a>
