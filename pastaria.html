@@ -113,8 +113,8 @@
     
     
 <script>
-
-    <!--Nur zum Testen, spaeter loeschen!-->
+    
+    //Nur zum Testen, spaeter loeschen!
     document.addEventListener("click", myFunction);
     function myFunction() {
         input_d = document.getElementById("input_date");
@@ -123,6 +123,10 @@
         document.getElementById("demo1").innerHTML = input_d.value;
         document.getElementById("demo2").innerHTML = input_t.value;
         document.getElementById("demo3").innerHTML = input_p.value;
+
+        localStorage["date"] = input_d.value;
+        localStorage["time"] = input_t.value;
+        localStorage["persons"] = input_p.value;
     }
      
 </script>
