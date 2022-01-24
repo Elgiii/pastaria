@@ -84,39 +84,45 @@
             </div>
             <div>
                 <!--Boxen zum Ankreuzen der gewünschten Optionen-->
-                <input type="checkbox" id="tischeReservierenCheckbox" name="tischreservieren">
-                <label for="tischeReservierenCheckbox">Tische reservieren</label>
+                <input type="checkbox" id="reserve" name="tischreservieren">
+                <label for="reserve">Tische reservieren</label>
               </div>
             <div>
-                <input type="checkbox" id="essenVorbestellenCheckbox" name="essenvorbestellen">
-                <label for="essenVorbestellenCheckbox">Essen vorbestellen</label>
+                <input type="checkbox" id="order" name="essenvorbestellen">
+                <label for="order">Essen vorbestellen</label>
             </div>
         </div>
         <!--Button zur nächsten Seite-->
-        <a href="tables.html" id="next" onclick="myFunction();">
-            <button class="button">Weiter</button>
+        <a id="next" href="userdata.html" onclick="setNext();">
+            <button onclick="check()" class="button">Weiter</button>
         </a>
-        <p id="statusText"></p>
     
     
 <script>
-    
+    var checking = 0;
+
     function isValid(date) {
         return ((new Date(date) !== "Invalid Date") && !isNaN(new Date(date)));
     }
 
     //Eingaben in Variable speichern
     //document.getElementById("next").addEventListener("click", myFunction);
-    function myFunction() {
-        document.getElementById("next").setAttribute('href', 'tables.html');
-
+    function check() {
+        //document.getElementById("next").setAttribute("href", "tables.html");
+        checking = 0;
         input_d = document.getElementById("input_date");
         input_t = document.getElementById("input_time");
         input_p = document.getElementById("input_people");
 
+        localStorage["date"] = input_d.value;
+        localStorage["time"] = input_t.value;
+        localStorage["persons"] = input_p.value;
+
+        
         if(!isValid(input_d.value)) {
             alert("Ihre Eingabe konnte nicht verarbeitet werden! (Datum)");
-            document.getElementById("next").setAttribute('href', '#');
+            document.getElementById("next").setAttribute("href", "#");
+            checking = 1;
         }
 
         var timeArr = input_t.value.split(":");
@@ -125,18 +131,37 @@
 
         if(timeArr.length != 2 || !(hour >= 0 && hour < 25) || !(minute >= 0 && minute < 60)) {
             alert("Ihre Eingabe konnte nicht verarbeitet werden! (Zeit)");
-            document.getElementById("next").setAttribute('href', '#');
+            document.getElementById("next").setAttribute("href", "#");
+            checking = 1;
         }
 
         var persons = parseInt(input_p.value);
         if(persons < 1 || persons > 10 || isNan(parseInt(input_p.value))) {
             alert("Ihre Eingabe konnte nicht verarbeitet werden! (Persons)");
-            document.getElementById("next").setAttribute('href', '#');
+            document.getElementById("next").setAttribute("href", "#");
+            checking = 1;
         }
 
-        localStorage["date"] = input_d.value;
-        localStorage["time"] = input_t.value;
-        localStorage["persons"] = input_p.value;
+    }
+
+    function setNext(){
+        if(checking == 0){
+            var order = document.getElementById("order").checked;
+            var reserve = document.getElementById("reserve").checked;
+            if(order && reserve){
+                localStorage["reserved"] = 1;
+                document.getElementById("next").setAttribute("href", "tables.html");
+            }else if (order){
+                localStorage["reserved"] = 0;
+                document.getElementById("next").setAttribute("href", "basket_1.html");
+            }else if (reserve){
+                localStorage["reserved"] = 0;
+                document.getElementById("next").setAttribute("href", "tables.html");
+            }else{
+                localStorage["reserved"] = 0;
+                document.getElementById("next").setAttribute("href", "userdata.html");
+            }
+        }
     }
      
 </script>

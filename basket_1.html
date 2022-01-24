@@ -115,6 +115,11 @@
     var wassercount= 0;
     var pastacount = 0;
 
+    localStorage["pizzacount"] = 0;
+    localStorage["burgercount"] = 0;
+    localStorage["wassercount"] = 0;
+    localStorage["pastacount"] = 0;
+
     function handleSubmit1() {
         document.getElementById("Pizza").style.visibility = "";
         pizzacount += 1;
@@ -142,6 +147,12 @@
         localStorage["pastacount"] = pastacount;
         document.getElementById("pastacount").innerHTML = localStorage["pastacount"] + " Stück";
     }
+
+    function setPrev(){
+        if(localStorage["reserved"] == 1){
+            document.getElementById("next").href = "tables.html";
+        }
+    }
      
 </script>
 </head>
@@ -152,7 +163,7 @@
     <!-- Rueckpfeil Zeile -->
     <div class="box">
 
-        <a href="tables.html">
+        <a id="prev" href="pastaria.html" onclick="setPrev()">
             <button class="back" style="float: left;">
                 <img class="arrow" src="https://cdn.discordapp.com/attachments/922128716262428682/930209929606889562/unknown.png">
             </button>
