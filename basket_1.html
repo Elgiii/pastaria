@@ -110,21 +110,37 @@
 </style>
 <script>
     // Rueckgabe der Sichtbarkeitseigenschaft von Pizza , Burger, Wasser, Wasser, Pasta
-    
+    var pizzacount = 0;
+    var burgercount = 0;
+    var wassercount= 0;
+    var pastacount = 0;
+
     function handleSubmit1() {
         document.getElementById("Pizza").style.visibility = "";
+        pizzacount += 1;
+        localStorage["pizzacount"] = pizzacount;
+        document.getElementById("pizzacount").innerHTML = localStorage["pizzacount"] + " Stück";
     }
 
     function handleSubmit2() {
         document.getElementById("Burger").style.visibility = "";
+        burgercount += 1;
+        localStorage["burgercount"] = burgercount;
+        document.getElementById("burgercount").innerHTML = localStorage["burgercount"] + " Stück";
     }
 
     function handleSubmit3() {
         document.getElementById("Wasser").style.visibility = "";
+        wassercount += 1;
+        localStorage["wassercount"] = wassercount;
+        document.getElementById("wassercount").innerHTML = localStorage["wassercount"] + " Stück";
     }
 
     function handleSubmit4() {
         document.getElementById("Pasta").style.visibility = "";
+        pastacount += 1;
+        localStorage["pastacount"] = pastacount;
+        document.getElementById("pastacount").innerHTML = localStorage["pastacount"] + " Stück";
     }
      
 </script>
@@ -159,7 +175,10 @@
                             <div>- gross</div>
                         </div>
                     </div>
-                    <div style="margin-left:5pt;">7,99€</div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div id="pizzacount" style="margin-left: 5pt;"></div>
+                        <div style="margin-left:5pt;">7,99€</div>
+                    </div>
                 </div>
                 <div class="flex-container" id="Burger" style="visibility: hidden;">
                     <div class="item">
@@ -171,7 +190,10 @@
                             <div>- doppelt Kaese</div>
                         </div>
                     </div>
-                    <div style="margin-left:5pt;">12,00€</div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div id="burgercount" style="margin-left: 5pt;"></div>
+                        <div style="margin-left:5pt;">12,00€</div>
+                    </div>
                 </div>
                 <div class="flex-container" id="Wasser" style="visibility: hidden;">
                     <div class="item">
@@ -183,7 +205,10 @@
                             <div>- mit Kohlensaeure</div>
                         </div>
                     </div>
-                    <div style="margin-left:5pt;">15,00€</div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div id="wassercount" style="margin-left: 5pt;"></div>
+                        <div style="margin-left:5pt;">15,00€</div>
+                    </div>
                 </div>
                 <div class="flex-container" id="Pasta" style="visibility: hidden;">
                     <div class="item">
@@ -196,7 +221,10 @@
                             <div>- mit Kaese</div>
                         </div>
                     </div>
-                    <div style="margin-left:5pt;">3,00€</div>
+                    <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
+                        <div id="pastacount" style="margin-left: 5pt;"></div>
+                        <div style="margin-left:5pt;">3,00€</div>
+                    </div>
                 </div>
             </div>
             <!-- Gericht und Preis Box -->
