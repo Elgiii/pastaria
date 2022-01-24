@@ -75,7 +75,7 @@
         
     </div>
     <!--this is the button to go to the next site-->
-    <a href="basket_1.html">
+    <a id="next" href="userdata.html" onclick="handleNext()">
         <button class="button">Weiter</button>
     </a>
     
@@ -95,6 +95,12 @@
     document.getElementById("date").innerHTML = localStorage["date"];
     document.getElementById("time").innerHTML = localStorage["time"];
     document.getElementById("persons").innerHTML = localStorage["persons"];
+
+    function handleNext(){
+        if(localStorage["reserved"] == 1){
+            document.getElementById("next").href = "basket_1.html";
+        }
+    }
     
 </script>
 </body>
