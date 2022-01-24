@@ -80,18 +80,6 @@
                         <input style="height:20pt; text-align:center;" type="text" id="input_people" placeholder="max. 10 Personen"  required>
                     </form>
                 </div>
-                
-                
-                <div class="box">
-                    <!--Nur zum Testen, spaeter loeschen!-->
-                    <!-- <div style="margin:7pt;" draggable="true" id="status1">????</div> -->
-                    <p style="margin:7pt;" draggable="true" id="demo1">
-                    <p style="margin:7pt;" draggable="true" id="demo2">
-                    <p style="margin:7pt;" draggable="true" id="demo3">
-                </div>
-                
-                
-                
             </div>
             <div>
                 <!--Boxen zum Ankreuzen der gewünschten Optionen-->
@@ -112,15 +100,12 @@
     
 <script>
     
-    //Nur zum Testen, spaeter loeschen!
+    //Eingaben in Variable speichern
     document.addEventListener("click", myFunction);
     function myFunction() {
         input_d = document.getElementById("input_date");
         input_t = document.getElementById("input_time");
         input_p = document.getElementById("input_people");
-        document.getElementById("demo1").innerHTML = input_d.value;
-        document.getElementById("demo2").innerHTML = input_t.value;
-        document.getElementById("demo3").innerHTML = input_p.value;
 
         localStorage["date"] = input_d.value;
         localStorage["time"] = input_t.value;
