@@ -12,14 +12,11 @@
   background-color: white;
   color: #00519e;
   font-size: 25px;
-  background-image: url("https://media.discordapp.net/attachments/914990860402327582/932750754559696996/bestbackground.png");
-  background-repeat: repeat;
+  background-image: url("https://get.wallhere.com/photo/bar-restaurant-interior-design-tables-chairs-design-style-meal-reception-Interiors-function-hall-694056.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.dark-mode {
-  background-color: #202225;
-}
 
 .flex-container {
     align-items: center;
@@ -56,17 +53,9 @@
 }
 
 
-</style>
-<script>
-
-    //Funktion für den Button zum (De-)Aktivieren des Darkmodes
-    function handelButton() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-    }
-     
-</script>
+</style>  
 </head>
+    
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
     <!--Button zum (De-)Aktivieren des Darkmodes-->
@@ -84,15 +73,27 @@
                 <div class="box">
                     <!--Eingabefelder-->
                     <form action="/myform" class="boxes" method="get">
-                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                        <input style="height:20pt; text-align:center;" type="text" id="input_date" placeholder="dd.mm.jjjj" required>
                     </form>
                     <form action="/myform" class="boxes" method="get">
-                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                        <input style="height:20pt; text-align:center;" type="text" id="input_time" placeholder="hh:mm" required>
                     </form>
                     <form action="/myform" class="boxes" method="get">
-                        <input style="height:20pt; text-align:center;" type="text" id="cityname" required>
+                        <input style="height:20pt; text-align:center;" type="text" id="input_people" placeholder="max. 10 Personen"  required>
                     </form>
                 </div>
+                
+                
+                <div class="box">
+                    <!--Nur zum Testen, spaeter loeschen!-->
+                    <!-- <div style="margin:7pt;" draggable="true" id="status1">????</div> -->
+                    <p style="margin:7pt;" draggable="true" id="demo1">
+                    <p style="margin:7pt;" draggable="true" id="demo2">
+                    <p style="margin:7pt;" draggable="true" id="demo3">
+                </div>
+                
+                
+                
             </div>
             <div>
                 <!--Boxen zum Ankreuzen der gewünschten Optionen-->
@@ -109,5 +110,21 @@
             <button class="button">Weiter</button>
         </a>
         <p id="statusText"></p>
+    
+    
+<script>
+
+    <!--Nur zum Testen, spaeter loeschen!-->
+    document.addEventListener("click", myFunction);
+    function myFunction() {
+        input_d = document.getElementById("input_date");
+        input_t = document.getElementById("input_time");
+        input_p = document.getElementById("input_people");
+        document.getElementById("demo1").innerHTML = input_d.value;
+        document.getElementById("demo2").innerHTML = input_t.value;
+        document.getElementById("demo3").innerHTML = input_p.value;
+    }
+     
+</script>
 </body>
 </html> 
