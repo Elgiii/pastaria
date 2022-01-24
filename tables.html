@@ -64,9 +64,9 @@
                     width="75" height="30">
                 </a>
                 <!--here are the time, date and persons-->
-                <div style="margin:7pt;">15.12.2021</div>
-                <div style="margin:7pt;">13:00 Uhr</div>
-                <div style="margin:7pt;">3</div>
+                <div id="date" style="margin:7pt;"></div>
+                <div id="time" style="margin:7pt;"></div>
+                <div id="persons" style="margin:7pt;"></div>
             </div>
         <div class="flex-container">
             <!--this is the image of the restaurant layout-->
@@ -81,12 +81,20 @@
     
         
 <script>
+
+    //handles the button to change to dark mode
+    function handelButton() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
     }
     //handles the the picture to change to another one
     function changePicture(){
         document.getElementById("tables").src = "restaurant2.png";
     }
 
+    document.getElementById("date").innerHTML = localStorage["date"];
+    document.getElementById("time").innerHTML = localStorage["time"];
+    document.getElementById("persons").innerHTML = localStorage["persons"];
     
 </script>
 </body>
