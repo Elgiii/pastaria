@@ -93,7 +93,7 @@
             </div>
         </div>
         <!--Button zur nächsten Seite-->
-        <a href="tables.html">
+        <a href="tables.html" id="next" onclick="myFunction();">
             <button class="button">Weiter</button>
         </a>
         <p id="statusText"></p>
@@ -101,12 +101,38 @@
     
 <script>
     
+    function isValid(date) {
+        return ((new Date(date) !== "Invalid Date") && !isNaN(new Date(date)));
+    }
+
     //Eingaben in Variable speichern
-    document.addEventListener("click", myFunction);
+    //document.getElementById("next").addEventListener("click", myFunction);
     function myFunction() {
+        document.getElementById("next").setAttribute('href', 'tables.html');
+
         input_d = document.getElementById("input_date");
         input_t = document.getElementById("input_time");
         input_p = document.getElementById("input_people");
+
+        if(!isValid(input_d.value)) {
+            alert("Ihre Eingabe konnte nicht verarbeitet werden! (Datum)");
+            document.getElementById("next").setAttribute('href', '#');
+        }
+
+        var timeArr = input_t.value.split(":");
+        var hour = parseInt(timeArr[0]);
+        var minute = parseInt(timeArr[1]);
+
+        if(timeArr.length != 2 || !(hour >= 0 && hour < 25) || !(minute >= 0 && minute < 60)) {
+            alert("Ihre Eingabe konnte nicht verarbeitet werden! (Zeit)");
+            document.getElementById("next").setAttribute('href', '#');
+        }
+
+        var persons = parseInt(input_p.value);
+        if(persons < 1 || persons > 10 || isNan(parseInt(input_p.value))) {
+            alert("Ihre Eingabe konnte nicht verarbeitet werden! (Persons)");
+            document.getElementById("next").setAttribute('href', '#');
+        }
 
         localStorage["date"] = input_d.value;
         localStorage["time"] = input_t.value;
