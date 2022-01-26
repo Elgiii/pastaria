@@ -149,8 +149,8 @@
     }
 
     function setPrev(){
-        if(localStorage["reserved"] == 1){
-            document.getElementById("next").href = "tables.html";
+        if(localStorage["r"] == 1 || localStorage["onr"] == 1){
+            document.getElementById("prev").href = "tables.html";
         }
     }
      

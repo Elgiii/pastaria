@@ -97,7 +97,7 @@
     document.getElementById("persons").innerHTML = localStorage["persons"];
 
     function handleNext(){
-        if(localStorage["reserved"] == 1){
+        if(localStorage["o"] == 1 || localStorage["onr"] == 1){
             document.getElementById("next").href = "basket_1.html";
         }
     }

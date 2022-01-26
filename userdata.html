@@ -53,6 +53,15 @@
     margin-left: 20pt;
 }
 
+.back{
+    height: 20pt;
+    margin-left: 10pt;
+    float: left;
+}
+
+.arrow{
+    height: 15pt;
+}
 
 </style>
 
@@ -60,7 +69,14 @@
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
 <body class="body">
+    <div class="box">
 
+        <a id="prev" href="pastaria.html" onclick="setPrev()">
+            <button class="back" style="float: left;">
+                <img class="arrow" src="https://cdn.discordapp.com/attachments/922128716262428682/930209929606889562/unknown.png">
+            </button>
+        </a>
+    </div>
     <div class="box">
         
             <div class="flex-container">
@@ -89,4 +105,13 @@
             <button class="button">Abschließen</button>
         </a>
 </body>
+<script>
+
+    function setPrev(){
+        if(localStorage["o"] == 1 || localStorage["onr"] == 1){
+            document.getElementById("prev").href = "cart.html";
+        }
+    }
+
+</script>
 </html> 

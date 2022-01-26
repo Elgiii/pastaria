@@ -105,6 +105,12 @@
         return ((new Date(date) !== "Invalid Date") && !isNaN(new Date(date)));
     }
 
+    //Setting variables to know where to go and where to go back to
+    localStorage["onr"] = 0;
+    localStorage["o"] = 0;
+    localStorage["r"] = 0;
+    localStorage["u"] = 0;
+
     //Eingaben in Variable speichern
     //document.getElementById("next").addEventListener("click", myFunction);
     function check() {
@@ -149,16 +155,16 @@
             var order = document.getElementById("order").checked;
             var reserve = document.getElementById("reserve").checked;
             if(order && reserve){
-                localStorage["reserved"] = 1;
+                localStorage["onr"] = 1;
                 document.getElementById("next").setAttribute("href", "tables.html");
             }else if (order){
-                localStorage["reserved"] = 0;
+                localStorage["o"] = 1;
                 document.getElementById("next").setAttribute("href", "basket_1.html");
             }else if (reserve){
-                localStorage["reserved"] = 0;
+                localStorage["r"] = 1;
                 document.getElementById("next").setAttribute("href", "tables.html");
             }else{
-                localStorage["reserved"] = 0;
+                localStorage["u"] = 1;
                 document.getElementById("next").setAttribute("href", "userdata.html");
             }
         }
