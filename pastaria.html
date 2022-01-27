@@ -72,7 +72,7 @@
                 <div class="box">
                     <!--Eingabefelder-->
                     <form action="/myform" class="boxes" method="get">
-                        <input style="height:20pt; text-align:center;" type="text" id="input_date" placeholder="dd.mm.jjjj" required>
+                        <input style="height:20pt; text-align:center;" type="text" id="input_date" placeholder="mm.dd.jjjj" required>
                     </form>
                     <form action="/myform" class="boxes" method="get">
                         <input style="height:20pt; text-align:center;" type="text" id="input_time" placeholder="hh:mm" required>
@@ -143,7 +143,7 @@
 
         var persons = parseInt(input_p.value);
         if(persons < 1 || persons > 10 || isNan(parseInt(input_p.value))) {
-            alert("Ihre Eingabe konnte nicht verarbeitet werden! (Persons)");
+            alert("Ihre Eingabe konnte nicht verarbeitet werden! (People)");
             document.getElementById("next").setAttribute("href", "#");
             checking = 1;
         }

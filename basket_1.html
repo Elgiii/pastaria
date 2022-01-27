@@ -114,6 +114,11 @@
     var burgercount = 0;
     var wassercount= 0;
     var pastacount = 0;
+    var pizzaprice = 7.99;
+    var burgerprice = 12.00;
+    var wasserprice = 15.00;
+    var pastaprice = 3.00;
+
 
     localStorage["pizzacount"] = 0;
     localStorage["burgercount"] = 0;
@@ -125,6 +130,7 @@
         pizzacount += 1;
         localStorage["pizzacount"] = pizzacount;
         document.getElementById("pizzacount").innerHTML = localStorage["pizzacount"] + " Stück";
+        document.getElementById("pizzaprice").innerHTML = (String)(pizzacount * pizzaprice).replace(".", ",") + "€";
     }
 
     function handleSubmit2() {
@@ -132,6 +138,7 @@
         burgercount += 1;
         localStorage["burgercount"] = burgercount;
         document.getElementById("burgercount").innerHTML = localStorage["burgercount"] + " Stück";
+        document.getElementById("burgerprice").innerHTML = (String)(burgercount * burgerprice).replace(".", ",") + "€";
     }
 
     function handleSubmit3() {
@@ -139,6 +146,7 @@
         wassercount += 1;
         localStorage["wassercount"] = wassercount;
         document.getElementById("wassercount").innerHTML = localStorage["wassercount"] + " Stück";
+        document.getElementById("wasserprice").innerHTML = (String)(wassercount * wasserprice).replace(".", ",") + "€";
     }
 
     function handleSubmit4() {
@@ -146,6 +154,7 @@
         pastacount += 1;
         localStorage["pastacount"] = pastacount;
         document.getElementById("pastacount").innerHTML = localStorage["pastacount"] + " Stück";
+        document.getElementById("pastaprice").innerHTML = (String)(pastacount * pastaprice).replace(".", ",") + "€";
     }
 
     function setPrev(){
@@ -188,7 +197,7 @@
                     </div>
                     <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
                         <div id="pizzacount" style="margin-left: 5pt;"></div>
-                        <div style="margin-left:5pt;">7,99€</div>
+                        <div style="margin-left:5pt;" id="pizzaprice"></div>
                     </div>
                 </div>
                 <div class="flex-container" id="Burger" style="visibility: hidden;">
@@ -203,7 +212,7 @@
                     </div>
                     <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
                         <div id="burgercount" style="margin-left: 5pt;"></div>
-                        <div style="margin-left:5pt;">12,00€</div>
+                        <div style="margin-left:5pt;" id="burgerprice"></div>
                     </div>
                 </div>
                 <div class="flex-container" id="Wasser" style="visibility: hidden;">
@@ -218,7 +227,7 @@
                     </div>
                     <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
                         <div id="wassercount" style="margin-left: 5pt;"></div>
-                        <div style="margin-left:5pt;">15,00€</div>
+                        <div style="margin-left:5pt;" id="wasserprice"></div>
                     </div>
                 </div>
                 <div class="flex-container" id="Pasta" style="visibility: hidden;">
@@ -234,7 +243,7 @@
                     </div>
                     <div class="box" style="margin-left: 20pt; margin-top: 5pt; margin-bottom: 5pt;">
                         <div id="pastacount" style="margin-left: 5pt;"></div>
-                        <div style="margin-left:5pt;">3,00€</div>
+                        <div style="margin-left:5pt;" id="pastaprice"></div>
                     </div>
                 </div>
             </div>

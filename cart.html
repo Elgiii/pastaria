@@ -75,12 +75,20 @@
 </style>
 
 <script>
+    var pizzaprice = 7.99;
+    var burgerprice = 12.00;
+    var wasserprice = 15.00;
+    var pastaprice = 3.00;
 
     function stueckanzahl(){
         document.getElementById("amountburger").innerHTML = localStorage["burgercount"] + " Stück"
         document.getElementById("amountpizza").innerHTML = localStorage["pizzacount"] + " Stück";
         document.getElementById("amountwater").innerHTML = localStorage["wassercount"] + " Stück";
         document.getElementById("amountpasta").innerHTML = localStorage["pastacount"] + " Stück";
+        document.getElementById("pizzaprice").innerHTML = (String)(localStorage["pizzacount"] * pizzaprice).replace(".", ",") + "€";
+        document.getElementById("burgerprice").innerHTML = (String)(localStorage["burgercount"] * burgerprice).replace(".", ",") + "€";
+        document.getElementById("wasserprice").innerHTML = (String)(localStorage["wassercount"] * wasserprice).replace(".", ",") + "€";
+        document.getElementById("pastaprice").innerHTML = (String)(localStorage["pastacount"] * pastaprice).replace(".", ",") + "€";
     }
 
 
@@ -116,7 +124,7 @@
                 </div>
             </div>
             <div id="amountpizza" style="margin-left:50pt; margin-top:10pt;">1 Stück</div>
-            <div style="margin-left:50pt; margin-top:10pt;">7,99€</div>
+            <div style="margin-left:50pt; margin-top:10pt;" id="pizzaprice"></div>
         </div>
 
         <div class="flex-container">
@@ -130,7 +138,7 @@
                 </div>
             </div>
             <div id="amountburger" style="margin-left:50pt; margin-top:10pt;">1 Stück</div>
-            <div style="margin-left:50pt; margin-top:10pt;">12,00€</div>
+            <div style="margin-left:50pt; margin-top:10pt;" id="burgerprice"></div>
         </div>
 
         <div class="flex-container">
@@ -144,7 +152,7 @@
                 </div>
             </div>
             <div id="amountwater" style="margin-left:20pt; margin-top:10pt;">1 Stück</div>
-            <div style="margin-left:50pt; margin-top:10pt;">15,00€</div>
+            <div style="margin-left:50pt; margin-top:10pt;" id="wasserprice"></div>
         </div>
 
         <div class="flex-container">
@@ -159,7 +167,7 @@
                 </div>
             </div>
             <div id="amountpasta" style="margin-left:50pt; margin-top:10pt;">1 Stück</div>
-            <div style="margin-left:50pt; margin-top:10pt;">3,00€</div>
+            <div style="margin-left:50pt; margin-top:10pt;" id="pastaprice"></div>
         </div>
 
         <!--Weiter Button-->
